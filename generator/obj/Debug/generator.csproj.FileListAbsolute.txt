@@ -6,3 +6,4 @@ c:\users\admin\documents\visual studio 2015\Projects\generator\generator\obj\Deb
 c:\users\admin\documents\visual studio 2015\Projects\generator\generator\obj\Debug\generator.csproj.GenerateResource.Cache
 c:\users\admin\documents\visual studio 2015\Projects\generator\generator\obj\Debug\generator.exe
 c:\users\admin\documents\visual studio 2015\Projects\generator\generator\obj\Debug\generator.pdb
+C:\Users\Admin\Documents\Visual Studio 2015\Projects\generator\generator\obj\Debug\generator.Form1.resources

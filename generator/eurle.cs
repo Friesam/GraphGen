@@ -6,14 +6,23 @@ using System.Threading.Tasks;
 
 namespace generator
 {
-    public class eurle
+    class eurle
     {
+        int counter = 0;
+        double probability = 0.3;
+
+        int Vertex = 0;
+        for (i = 1, i >= Vertex; i++){
+            for (j= 1, j>= Vertex; j++)
+                for (k = 1, k>=Vertex; k++)
+            }
+
         public bool Violation(
-           Vertex v1,
-           Vertex v2)
-           //ref int number)
+            Vertex v1,
+            Vertex v2,
+            ref int number)
         {
-            //bool cv = false;
+            bool cv = false;
 
             if (v1.Edge != null)
             {
@@ -22,8 +31,8 @@ namespace generator
                 for (int i = 0; !found && i < v1.Edge.Count; i++)
                     found = v1.Edge[i].Id == v2.Id;
 
-                //if (found)
-                //    cv = v1.Color == v2.Color;
+                if (found)
+                    cv = v1.Color == v2.Color;
             }
 
             if (v2.Edge != null)
@@ -33,14 +42,14 @@ namespace generator
                 for (int i = 0; !found && i < v2.Edge.Count; i++)
                     found = v2.Edge[i].Id == v1.Id;
 
-            //    if (found)
-            //        cv = v1.Color == v2.Color;
+                if (found)
+                    cv = v1.Color == v2.Color;
             }
 
-            //if (cv)
-            //    number++;
+            if (cv)
+                number++;
 
-            //return cv;
+            return cv;
         }
 
         public int Fitness(List<Vertex> G)
@@ -57,7 +66,7 @@ namespace generator
         public bool EHC(
             double probability,
             int generations,
-            //int numberColors,
+            int numberColors,
             int population,
             List<Vertex> G,
             ref int restart,
@@ -77,7 +86,7 @@ namespace generator
                 {
                     Vertex v = G[j];
 
-                    //v.Color = random.Next(numberColors);
+                    v.Color = random.Next(numberColors);
                     chromosome[i].Add(v);
                 }
 
@@ -110,7 +119,7 @@ namespace generator
 
                 for (int i = 0; i < child.Count; i++)
                     if (random.NextDouble() < probability)
-                        /*child[i].Color = random.Next(numberColors)*/;
+                        child[i].Color = random.Next(numberColors);
 
                 int childFitness = Fitness(child);
 
@@ -152,7 +161,7 @@ namespace generator
                         return EHC(
                             probability,
                             generations,
-                            //numberColors,
+                            numberColors,
                             population + 2,
                             G,
                             ref restart,
@@ -167,7 +176,7 @@ namespace generator
                 return EHC(
                     probability,
                     generations,
-                    //numberColors,
+                    numberColors,
                     population + 2,
                     G,
                     ref restart,

@@ -7,23 +7,11 @@ using System.Threading.Tasks;
 namespace generator
 {
     public class Vertex
-    {
-        public int color; 
+    { 
         public int id;
         List<Vertex> edge;
 
-        public int Color
-        {
-            get
-            {
-                return color;
-            }
-            set
-            {
-                color = value;
-            }
-        }
-
+        
         public int Id
         {
             get
@@ -48,9 +36,8 @@ namespace generator
             }
         }
 
-        public Vertex(int color, int id)
+        public Vertex( int id)
         {
-            this.color = color;
             this.id = id;
             this.edge = null;
         }
